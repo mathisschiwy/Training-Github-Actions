@@ -4,6 +4,9 @@ on:
   workflow_run:
     workflows:
       - Update Tag and Commit
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+
 
 jobs:
   build-and-push:
