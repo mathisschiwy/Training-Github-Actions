@@ -24,5 +24,6 @@ jobs:
           git add 'Tag.txt'
           git commit -m "Update Tag from 'Tag 1' to 'Tag 2'"
           git push
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
