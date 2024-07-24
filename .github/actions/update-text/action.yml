@@ -1,0 +1,11 @@
+name: 'Update Text'
+description: 'Ändert eine Zeile in einer Textdatei von "Tag 1" zu "Tag 2"'
+inputs:
+  filepath:
+    description: 'Der Pfad zur Textdatei'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: sed -i 's/Tag 1/Tag 2/' ${{ inputs.filepath }}
+      shell: bash

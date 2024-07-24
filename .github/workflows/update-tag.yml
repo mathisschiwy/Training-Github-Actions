@@ -1,0 +1,31 @@
+name: 'Update Tag and Commit'
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-text:
+    runs-on:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update Tag in Text File
+        uses: ./.github/actions/update-text
+        with:
+          filepath: 'Training-Github-Action/Tag.txt'
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add 'Tag.txt'
+          git commit -m "Update Tag from 'Tag 1' to 'Tag 2'"
+          git push
+
+
