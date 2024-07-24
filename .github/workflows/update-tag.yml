@@ -1,4 +1,4 @@
-name: 'Update Tag and Commit'
+name: Update Tag and Commit
 on:
   push:
     branches:
@@ -23,9 +23,7 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add 'Tag.txt'
           git commit -m "Update Tag from 'Tag 1' to 'Tag 2'"
-          git tag updated
-          git push origin main --follow-tags
-          git push origin updated
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

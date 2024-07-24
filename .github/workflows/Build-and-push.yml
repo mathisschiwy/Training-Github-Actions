@@ -1,9 +1,9 @@
 name: Build and Publish Docker Image
 
 on:
-  push:
-    tags:
-      - updated
+  workflow_run:
+    workflows:
+      - Update Tag and Commit
 
 jobs:
   build-and-push:
