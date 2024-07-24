@@ -25,6 +25,7 @@ jobs:
           git commit -m "Update Tag from 'Tag 1' to 'Tag 2'"
           git tag updated
           git push origin main --follow-tags
+          git push origin updated
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
