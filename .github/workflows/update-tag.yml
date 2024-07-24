@@ -15,7 +15,7 @@ jobs:
       - name: Update Tag in Text File
         uses: ./.github/actions/update-text
         with:
-          filepath: 'Training-Github-Action/Tag.txt'
+          filepath: 'Tag.txt'
 
       - name: Commit and Push
         run: |
