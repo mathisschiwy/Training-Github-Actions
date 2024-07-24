@@ -23,7 +23,8 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add 'Tag.txt'
           git commit -m "Update Tag from 'Tag 1' to 'Tag 2'"
-          git push
+          git tag updated
+          git push origin main --follow-tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
